@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _secondJumping = false;
             _canDash = true;
-            _verticalVelocity = 0f;
+            _verticalVelocity = -0.1f;
         }
         else
         {
