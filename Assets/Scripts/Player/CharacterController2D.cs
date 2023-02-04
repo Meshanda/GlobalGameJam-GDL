@@ -9,6 +9,8 @@ public class CharacterController2D : MonoBehaviour
     private bool _grounded;
 
     private BoxCollider2D _boxCollider;
+
+    private float _angleError = 0.005f;
     
     public bool IsGrounded => _grounded;
 
@@ -36,8 +38,10 @@ public class CharacterController2D : MonoBehaviour
             {
                 transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
             }
-            
-            if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && _velocity.y <= 0)
+
+            Vector2 pos = transform.position;
+
+            if (Vector2.Angle(colliderDistance.normal, Vector2.up) < (90 - _angleError) && _velocity.y <= 0)
             {
                 _grounded = true;
             }

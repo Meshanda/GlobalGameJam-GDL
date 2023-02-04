@@ -56,6 +56,26 @@ public class PlayerMovement : MonoBehaviour
     
 
 #endregion
+
+#region WallJump
+
+[SerializeField] private Transform wallCheck;
+    [SerializeField] private float wallSlidingSpeed;
+    private bool _wallSliding;
+
+    [SerializeField] private LayerMask wallLayer;
+    
+    private bool _wallJumping;
+    private float _wallJumpingDirection;
+    private float _wallJumpingVelocity;
+    
+    private float _wallJumpingCounter;
+    
+    [SerializeField] private float wallJumpingTime;
+    
+    [SerializeField] private float wallJumpingPower;
+
+#endregion
     
 
     
@@ -73,12 +93,17 @@ public class PlayerMovement : MonoBehaviour
         Move();
         RotateControl();
         GravityControl();
+        WallSlideControl();
+        WallJumpControl();
     }
 
     public void Move()
     {
         Vector2 verticalAxis = new Vector2(0, _verticalVelocity);
         Vector2 horizontalAxis = new Vector2(_horizontalVelocity, 0);
+        
+        if(_wallJumpingVelocity != 0)
+            horizontalAxis.x = _wallJumpingVelocity;
         
         if (_dashVelocity != 0)
             horizontalAxis.x = _dashVelocity;
@@ -118,6 +143,39 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
+
+    private void WallSlideControl()
+    {
+        if (IsWalled() && controller.IsGrounded == false && _horizontalVelocity != 0 && _verticalVelocity < 0)
+        {
+            _wallSliding = true;
+            _verticalVelocity = Mathf.Clamp(_verticalVelocity, -wallSlidingSpeed, float.MaxValue);
+        }
+        else
+        {
+            _wallSliding = false;
+        }
+    }
+
+    private void WallJumpControl()
+    {
+        if (IsWalled() && controller.IsGrounded == false)
+        {
+            _wallJumping = false;
+            _wallJumpingDirection = -transform.localScale.x;
+            _wallJumpingCounter = wallJumpingTime;
+        }
+        else
+        {
+            _wallJumpingCounter -= Time.deltaTime;
+        }
+    }
+
+    // check if you make the sex with a wall
+    private bool IsWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.1f, wallLayer);
+    }
     
     private void DoJump()
     {
@@ -136,6 +194,18 @@ public class PlayerMovement : MonoBehaviour
             _gravity = gravityUp;
             _verticalVelocity = _maximumYVelocity;
         }
+    }
+
+    private IEnumerator DoWallJump()
+    {
+        _wallJumping = true;
+        _wallJumpingCounter = 0f;
+        _gravity = gravityUp;
+        _verticalVelocity = _maximumYVelocity;
+        _wallJumpingVelocity = _wallJumpingDirection * wallJumpingPower;
+        yield return new WaitForSeconds(0.2f);
+        _wallJumping = false;
+        _wallJumpingVelocity = 0f;
     }
 
     private IEnumerator DoDash()
@@ -165,6 +235,9 @@ public class PlayerMovement : MonoBehaviour
     public void OnJump()
     {
         DoJump();
+        
+        if (_wallJumpingCounter > 0f)
+            StartCoroutine(DoWallJump());
     }
 
     public void OnJumpRelease()
