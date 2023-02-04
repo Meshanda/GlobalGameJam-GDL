@@ -83,10 +83,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform headCheck;
 
 #endregion
-    
 
-    
+    private bool _grapplingOccurs;
+    public bool GrapplingOccurs
+    {
+        get
+        {
+            return _grapplingOccurs;
+        }
+        set
+        {
+            _grapplingOccurs = value;
+            if (_grapplingOccurs)
+            {
+                rigidbody2D.gravityScale = 8.0f;
+            }
+            else
+            {
+                rigidbody2D.gravityScale = 0f;
+            }
+        }
+    }
+
     [SerializeField] private CharacterController2D controller;
+    [SerializeField] private Rigidbody2D rigidbody2D;
 
 
     private void Awake()
@@ -121,6 +141,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void GravityControl()
     {
+        if (GrapplingOccurs == false)
+            return;
+        
         if (_verticalVelocity <= 0 && _dashing == false)
         {
             _gravity = gravityDown;
@@ -212,11 +235,15 @@ public class PlayerMovement : MonoBehaviour
     
     private void DoJump()
     {
+        if (GrapplingOccurs == false)
+            return;
+        
         if(_secondJumping == true)
         {
             if(secondJumpUnlocked.value == true)
             {
                 _secondJumping = false;
+                _gravity = gravityUp;
                 _verticalVelocity = _maximumYVelocity;
             }
         }

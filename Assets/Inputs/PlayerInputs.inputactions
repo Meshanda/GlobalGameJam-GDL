@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "GrapplingRelease",
+                    "type": "Button",
+                    "id": "b703da49-124f-43cd-b97a-c8d3c2bdff42",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Axe",
                     "type": "Button",
                     "id": "1f8e84b7-8b44-450d-82f4-8cdc11589757",
@@ -151,6 +160,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a72dd1b8-03fd-4577-95b8-c828c25a8475",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c10032be-e72e-459a-bd63-e595b8834f65",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -185,7 +205,29 @@
                 {
                     "name": "",
                     "id": "e4542a25-6fb5-4be5-b53f-90f04e29f0b9",
-                    "path": "",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grappling",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e7052f8-71fe-4e7d-81d9-20fe226d21e6",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grappling",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2866107b-ef3a-4d91-94a4-500d7ec077ad",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -234,6 +276,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "JumpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d007db4-7466-4552-89b8-e48ea6d9246b",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrapplingRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a9b753e-6d9b-4b6d-ac29-640087b82108",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrapplingRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "189cb306-b1f6-4254-9b6b-4748b679d4f0",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrapplingRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
