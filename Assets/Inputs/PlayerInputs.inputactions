@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "JumpRelease",
+                    "type": "Button",
+                    "id": "bfa8b019-0518-48c9-a70b-0a504e3ea87f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Grappling",
                     "type": "Button",
                     "id": "cdf9d4e8-716a-4ed7-9b71-a2cefb0ef633",
@@ -181,6 +190,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Axe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50e72a3f-ed0d-48ec-acd6-9742eb6508c0",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29d312e8-9665-4d00-ae51-8f7039060e51",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab19105b-979a-48af-b56d-9b0b254f2afa",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
