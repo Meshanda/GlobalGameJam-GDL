@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 206722677}
   - component: {fileID: 206722679}
   - component: {fileID: 206722678}
+  - component: {fileID: 206722680}
   m_Layer: 0
   m_Name: Trigger Room 2
   m_TagString: Untagged
@@ -458,6 +459,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &206722680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206722676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b47855dc4beb4e4fadecd50d783352c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomType: 1
 --- !u!1 &233770118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2862,7 @@ GameObject:
   - component: {fileID: 1233291717}
   - component: {fileID: 1233291719}
   - component: {fileID: 1233291718}
+  - component: {fileID: 1233291720}
   m_Layer: 0
   m_Name: Trigger Room 5
   m_TagString: Untagged
@@ -2948,6 +2963,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1233291720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233291716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b47855dc4beb4e4fadecd50d783352c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomType: 4
 --- !u!1 &1256020353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3808,7 @@ GameObject:
   - component: {fileID: 1572386884}
   - component: {fileID: 1572386886}
   - component: {fileID: 1572386885}
+  - component: {fileID: 1572386887}
   m_Layer: 0
   m_Name: 'Trigger Room 1 '
   m_TagString: Untagged
@@ -3795,8 +3824,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572386883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.73, y: 0.291, z: -1.763137}
-  m_LocalScale: {x: 0.8141086, y: 11.086047, z: 1}
+  m_LocalPosition: {x: -7.14, y: 0.291, z: -1.763137}
+  m_LocalScale: {x: 0.23568444, y: 11.086047, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 890911648}
@@ -3809,7 +3838,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572386883}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3880,6 +3909,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1572386887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572386883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b47855dc4beb4e4fadecd50d783352c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomType: 0
 --- !u!1 &1599819529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,6 +3933,7 @@ GameObject:
   - component: {fileID: 1599819530}
   - component: {fileID: 1599819532}
   - component: {fileID: 1599819531}
+  - component: {fileID: 1599819533}
   m_Layer: 0
   m_Name: Trigger Room 4
   m_TagString: Untagged
@@ -3991,6 +4034,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1599819533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599819529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b47855dc4beb4e4fadecd50d783352c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomType: 3
 --- !u!1 &1617192162
 GameObject:
   m_ObjectHideFlags: 0
