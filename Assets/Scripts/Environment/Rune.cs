@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using ScriptableObjects.Variables;
 using UnityEngine;
 
+[Serializable]
+public enum RuneType
+{
+    DoubleJump,
+    Dash,
+    Grappin,
+    WallJump,
+    Hache
+}
+
 public class Rune : MonoBehaviour
 {
-    [Serializable]
-    public enum RuneType
-    {
-        DoubleJump,
-        Dash,
-        Grappin,
-        WallJump,
-        Hache
-    }
-
     [SerializeField] private RuneType _runeType;
 
     [SerializeField] private BoolVariable b_doubleJump;
@@ -46,6 +46,8 @@ public class Rune : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        OverlayManager.RefreshOverlay();
     }
 }
 
