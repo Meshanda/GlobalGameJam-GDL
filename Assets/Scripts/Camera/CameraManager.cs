@@ -10,6 +10,9 @@ public class CameraManager : GenericSingleton<CameraManager>
     [SerializeField] private GameObject _grappinCam;
     [SerializeField] private GameObject _wallJumpCam;
     [SerializeField] private GameObject _hacheCam;
+    
+    
+    public float BlendTime = .7f;
 
     public void TransitionRoomDoubleJump()
     {

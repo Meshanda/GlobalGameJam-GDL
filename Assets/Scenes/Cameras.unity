@@ -460,7 +460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074268103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25224304, y: 1.15065, z: -9.869308}
+  m_LocalPosition: {x: -0.641469, y: 1.1505799, z: -9.869308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.7
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -753,8 +753,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 44.86673, y: 6.9529552}
-      - {x: -9.879288, y: 7.0045676}
-      - {x: -9.875849, y: -5.015719}
+      - {x: -10.77303, y: 7.1076922}
+      - {x: -10.769591, y: -4.9813447}
       - {x: 44.86228, y: -5.18232}
 --- !u!4 &1909361821
 Transform:
