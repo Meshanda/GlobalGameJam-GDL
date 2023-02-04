@@ -8,4 +8,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Bootloader.unity
+    guid: b5d7af28499cded4bbf34ff344cffbfe
+  - enabled: 1
+    path: Assets/Scenes/CouloirPrincipal.unity
+    guid: 8793fa5fbab52b54aac881f6c408a480
+  - enabled: 1
+    path: Assets/Scenes/Music.unity
+    guid: d941db8d63381f8488dd1c29c473b2ec
+  - enabled: 1
+    path: Assets/Scenes/SceneDash.unity
+    guid: 2bb4ce8b31abb9d40875ac0134b3c83a
+  - enabled: 1
+    path: Assets/Scenes/SceneDoubleJump.unity
+    guid: 18585cd088802ca41a7f7618dc31449b
+  - enabled: 1
+    path: Assets/Scenes/SceneGrappin.unity
+    guid: 8f744612c1f814044a79fd2936292513
+  - enabled: 1
+    path: Assets/Scenes/SceneHache.unity
+    guid: a9d41d6e9a726f847a197d4a0f0fa0bc
+  - enabled: 1
+    path: Assets/Scenes/SceneWallJump.unity
+    guid: d12d4fe399c92d2429257ccaf78645f2
+  - enabled: 1
+    path: Assets/Scenes/UI_Menu.unity
+    guid: 0494465a8c6f89946b2aa29b8abb5d28
+  - enabled: 1
+    path: Assets/Scenes/UI_Overlay.unity
+    guid: cbba4afee0bb65442a1a462dd69e881d
   m_configObjects: {}
