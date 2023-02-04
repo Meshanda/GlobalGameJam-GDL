@@ -130,7 +130,18 @@
                 {
                     "name": "",
                     "id": "b61411fd-2abf-4273-a6c8-1a1fa67d22da",
-                    "path": "",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a56b6181-7da7-4001-96f0-396cf8acc854",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
