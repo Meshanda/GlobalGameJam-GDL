@@ -625,16 +625,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee4cb9e35e39d2469699027bc291417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doubleJumpImg: {fileID: 569428985}
-  _doubleJumpUnlocked: {fileID: 11400000, guid: 3e4061eaf9324a34f885744f42bdf130, type: 2}
-  _dashImg: {fileID: 1129053735}
-  _dashUnlocked: {fileID: 11400000, guid: b001284221d538d459dc5844cd3bffc2, type: 2}
-  _grappinImg: {fileID: 333383939}
-  _grappinUnlocked: {fileID: 11400000, guid: 70a5141dd0b84eb41943c4ff53b4bfea, type: 2}
-  _wallJumpImg: {fileID: 1375847923}
-  _wallJumpUnlocked: {fileID: 11400000, guid: 72e981152ddbc294c9c35f8c33bc855f, type: 2}
-  _hacheImg: {fileID: 423587011}
-  _hacheUnlocked: {fileID: 11400000, guid: c23d2ca219ecd0649a5d99fc92d13bbb, type: 2}
+  _doubleJumpImg: {fileID: 0}
+  _doubleJumpUnlocked: {fileID: 0}
+  _dashImg: {fileID: 0}
+  _dashUnlocked: {fileID: 0}
+  _grappinImg: {fileID: 0}
+  _grappinUnlocked: {fileID: 0}
+  _wallJumpImg: {fileID: 0}
+  _wallJumpUnlocked: {fileID: 0}
+  _hacheImg: {fileID: 0}
+  _hacheUnlocked: {fileID: 0}
 --- !u!4 &1234345442
 Transform:
   m_ObjectHideFlags: 0
