@@ -5,7 +5,7 @@ using ScriptableObjects.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : GenericSingleton<PlayerMovement>
 {
 
 #region Unlockable
@@ -85,20 +85,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform headCheck;
 
 #endregion
-    
 
-    
-    [SerializeField] private CharacterController2D controller;
+public bool Movable { get; set; } = true;
+
+[SerializeField] private CharacterController2D controller;
 
 
     private void Awake()
     {
+        base.Awake();
         _canDash = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Movable) return; 
         Move();
         RotateControl();
         GravityControl();

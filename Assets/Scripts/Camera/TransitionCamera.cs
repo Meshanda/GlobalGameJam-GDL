@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class TransitionCamera : MonoBehaviour
@@ -17,7 +18,8 @@ public class TransitionCamera : MonoBehaviour
     [SerializeField] private RoomType _roomType;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("BAHAHAHA");
+        PlayerMovement.Instance.Movable = false;
+
         var camScript = CameraManager.Instance;
         switch (_roomType)
         {
@@ -39,5 +41,14 @@ public class TransitionCamera : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        StartCoroutine(MoveAgainRoutine());
+    }
+
+    private IEnumerator MoveAgainRoutine()
+    {
+        yield return new WaitForSeconds(CameraManager.Instance.BlendTime);
+        
+        PlayerMovement.Instance.Movable = true;
     }
 }
