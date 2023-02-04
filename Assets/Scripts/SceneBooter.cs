@@ -6,15 +6,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneBooter : MonoBehaviour, ISingleton
+public class SceneBooter : GenericSingleton<SceneBooter>
 {
     [SerializeField] private List<StringVariable> _sceneToLoadOnBoot;
     [SerializeField] private List<StringVariable> _gameScenes;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     private void Start()
     {
