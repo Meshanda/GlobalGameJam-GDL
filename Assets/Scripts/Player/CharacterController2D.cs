@@ -27,7 +27,7 @@ public class CharacterController2D : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, _boxCollider.size, 0);
         foreach (Collider2D hit in hits)
         {
-            if (hit == _boxCollider)
+            if (hit == _boxCollider || hit.isTrigger)
                 continue;
 
             ColliderDistance2D colliderDistance = hit.Distance(_boxCollider);
