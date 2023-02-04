@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneBooter : MonoBehaviour, ISingleton
 {
-    [SerializeField] private List<StringVariable> _sceneToLoad;
+    [SerializeField] private List<StringVariable> _sceneToLoadOnBoot;
+    [SerializeField] private List<StringVariable> _gameScenes;
 
     private void Awake()
     {
@@ -17,10 +18,25 @@ public class SceneBooter : MonoBehaviour, ISingleton
 
     private void Start()
     {
-        foreach (var scene in _sceneToLoad)
+        foreach (var scene in _sceneToLoadOnBoot)
         {
             SceneManager.LoadSceneAsync(scene.value, LoadSceneMode.Additive);
         }
     }
-    
+
+    public void LoadGameScenes()
+    {
+        foreach (var scene in _gameScenes)
+        {
+            SceneManager.LoadSceneAsync(scene.value, LoadSceneMode.Additive);
+        }
+    }
+
+    public void UnloadScene(StringVariable sceneToUnload)
+    {
+        if (SceneManager.sceneCount > 1)
+        {
+            SceneManager.UnloadSceneAsync(sceneToUnload.value);
+        }
+    }
 }
