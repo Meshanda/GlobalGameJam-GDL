@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Utility;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -27,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     {
         _grounded = false;
         
-        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, _boxCollider.size, 0);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, transform.localScale.Abs(), 0);
         foreach (Collider2D hit in hits)
         {
             if (hit == _boxCollider || hit.isTrigger)
@@ -39,8 +40,8 @@ public class CharacterController2D : MonoBehaviour
             {
                 transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
             }
-
-            Vector2 pos = transform.position;
+            
+            Debug.DrawRay(colliderDistance.pointA, colliderDistance.normal);
 
             if (Vector2.Angle(colliderDistance.normal, Vector2.up) < (90 - _angleError) && _velocity.y <= 0)
             {

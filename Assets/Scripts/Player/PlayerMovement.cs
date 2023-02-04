@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 #region Unlockable
     [SerializeField] private BoolVariable secondJumpUnlocked;
     [SerializeField] private BoolVariable dashUnlocked;
+    [SerializeField] private BoolVariable wallJumpUnlocked;
 #endregion
 
 #region Jump
@@ -153,6 +154,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallSlideControl()
     {
+        if (wallJumpUnlocked.value == false)
+            return;
+        
         if (IsWalled() && controller.IsGrounded == false && _horizontalVelocity != 0 && _verticalVelocity < 0)
         {
             _wallSliding = true;
@@ -166,6 +170,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallJumpControl()
     {
+        if (wallJumpUnlocked.value == false)
+            return;
+        
         if (IsWalled() && controller.IsGrounded == false)
         {
             _wallJumping = false;
@@ -180,15 +187,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void HeadBumpControl()
     {
-        Collider2D[] hits = Physics2D.OverlapBoxAll(headCheck.position, new Vector2(Mathf.Abs(transform.localScale.x), 0.1f), 0.05f);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(headCheck.position, new Vector2(Mathf.Abs(transform.localScale.x), 0.1f), 0);
         
         foreach(var hit in hits)
         {
             if(hit == controller.Collider2D || hit.isTrigger)
                 continue;
             
+            ColliderDistance2D colliderDistance = hit.Distance(controller.Collider2D);
             
-            _verticalVelocity = -1.0f;
+            if (Vector2.Angle(colliderDistance.normal, Vector2.up) > (180 - 0.05f) && _verticalVelocity >= 0)
+            {
+                _verticalVelocity = -1.0f;
+            }
             return;
         }
     }
@@ -258,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
     {
         DoJump();
         
-        if (_wallJumpingCounter > 0f)
+        if (_wallJumpingCounter > 0f && wallJumpUnlocked.value == true && controller.IsGrounded == false)
             StartCoroutine(DoWallJump());
     }
 
