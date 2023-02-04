@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects.Variables;
 using UnityEngine;
 
 public class BreakablePlatform : MonoBehaviour
@@ -8,6 +9,8 @@ public class BreakablePlatform : MonoBehaviour
     [SerializeField] private float _timeUntilBreak = 2f;
     [SerializeField] private float _moveFactor = 1f;
     [SerializeField] private float _maxHorizontalMovement = 0.1f;
+    
+    [SerializeField] private BoolVariable _dashUnlocked;
 
     private bool _shakePlatform = false;
     private bool _right = true;
@@ -17,9 +20,12 @@ public class BreakablePlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _startPosition = transform.position;
-        StartCoroutine(DestroyPlatformCoroutine());
-        _shakePlatform = true;
+        if (!_shakePlatform)
+        {
+            _startPosition = transform.position;
+            StartCoroutine(DestroyPlatformCoroutine());
+            _shakePlatform = true;
+        }
     }
 
     private IEnumerator DestroyPlatformCoroutine()
@@ -29,7 +35,16 @@ public class BreakablePlatform : MonoBehaviour
         // Destroy this gameobject
         _shakePlatform = false;
 
-        Destroy(gameObject);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        yield return new WaitForSeconds(_timeUntilBreak);
+        
+        if (!_dashUnlocked || !_dashUnlocked.value)
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 
     private void Update()

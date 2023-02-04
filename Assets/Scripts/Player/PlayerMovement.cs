@@ -5,7 +5,7 @@ using ScriptableObjects.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : GenericSingleton<PlayerMovement>
 {
 
 #region Unlockable
@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
 #region Jump
     [SerializeField] private float maximumJumpHeight;
     [SerializeField] private float minimumJumpHeight;
-
+    [SerializeField] private float coyoteTime = 0.2f;
+    
+    private bool _isInCoyoteTime;
     private bool _secondJumping;
 #endregion
 
@@ -84,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
 #endregion
 
+public bool Movable { get; set; } = true;
     private bool _grapplingOccurs;
     public bool GrapplingOccurs
     {
@@ -108,21 +111,49 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private Rigidbody2D rigidbody2D;
 
+[SerializeField] private CharacterController2D controller;
+
 
     private void Awake()
     {
+        base.Awake();
         _canDash = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Movable) return; 
         Move();
         RotateControl();
         GravityControl();
         WallSlideControl();
         WallJumpControl();
         HeadBumpControl();
+        CoyoteTime();
+    }
+
+    private bool _lastGrounded = false;
+    private void CoyoteTime()
+    {
+        if (_lastGrounded && !controller.IsGrounded)
+        {
+            _isInCoyoteTime = true;
+            StopCoroutine(nameof(EndCoyoteCoroutine));
+            StartCoroutine(nameof(EndCoyoteCoroutine));
+        }
+
+        _lastGrounded = controller.IsGrounded;
+        if (_lastGrounded)
+        {
+            StopCoroutine(nameof(EndCoyoteCoroutine));
+        }
+    }
+
+    public IEnumerator EndCoyoteCoroutine()
+    {
+        yield return new WaitForSeconds(coyoteTime);
+        _isInCoyoteTime = false;
     }
 
     public void Move()
@@ -248,7 +279,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-        if (controller.IsGrounded)
+        if (controller.IsGrounded || _isInCoyoteTime)
         {
             _secondJumping = true;
             _gravity = gravityUp;
