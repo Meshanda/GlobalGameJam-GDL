@@ -76,6 +76,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpingPower;
 
 #endregion
+
+#region HeadBump
+
+    [SerializeField] private Transform headCheck;
+
+#endregion
     
 
     
@@ -95,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         GravityControl();
         WallSlideControl();
         WallJumpControl();
+        HeadBumpControl();
     }
 
     public void Move()
@@ -168,6 +175,21 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _wallJumpingCounter -= Time.deltaTime;
+        }
+    }
+
+    private void HeadBumpControl()
+    {
+        Collider2D[] hits = Physics2D.OverlapBoxAll(headCheck.position, new Vector2(Mathf.Abs(transform.localScale.x), 0.1f), 0.05f);
+        
+        foreach(var hit in hits)
+        {
+            if(hit == controller.Collider2D || hit.isTrigger)
+                continue;
+            
+            
+            _verticalVelocity = -1.0f;
+            return;
         }
     }
 

@@ -9,6 +9,7 @@ public class CharacterController2D : MonoBehaviour
     private bool _grounded;
 
     private BoxCollider2D _boxCollider;
+    public BoxCollider2D Collider2D => _boxCollider;
 
     private float _angleError = 0.005f;
     
