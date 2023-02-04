@@ -17,7 +17,6 @@ public class TransitionCamera : MonoBehaviour
     [SerializeField] private RoomType _roomType;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("BAHAHAHA");
         var camScript = CameraManager.Instance;
         switch (_roomType)
         {

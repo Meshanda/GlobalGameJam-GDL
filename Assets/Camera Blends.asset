@@ -13,8 +13,19 @@ MonoBehaviour:
   m_Name: Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: CM FollowPlayer
+  - m_From: '**ANY CAMERA**'
     m_To: CM Double Jump Room
+    m_Blend:
+      m_Style: 1
+      m_Time: 1
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: '**ANY CAMERA**'
+    m_To: CM FollowPlayer
     m_Blend:
       m_Style: 1
       m_Time: 1
