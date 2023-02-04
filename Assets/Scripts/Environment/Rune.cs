@@ -9,6 +9,14 @@ public class Rune : MonoBehaviour
 {
     [SerializeField] private BoolVariable _newPower;
 
+    private void Awake()
+    {
+        _newPower.value = false;
+        
+        if (_newPower.value)
+            Destroy(gameObject);
+    }
+
     private void UnlockPower()
     {
         _newPower.value = true;

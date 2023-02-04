@@ -39,6 +39,11 @@ public class OverlayManager : MonoBehaviour
         RefreshOverlay -= OnRefreshOverlay;
     }
 
+    private void Awake()
+    {
+        OnRefreshOverlay();
+    }
+
     private void OnRefreshOverlay()
     {
         if (_doubleJumpUnlocked.value)
