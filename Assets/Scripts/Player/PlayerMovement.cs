@@ -103,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
             _verticalVelocity = _maximumYVelocity;
         }
     }
-    
+
+#region InputsCall
     public void OnMove(InputValue value)
     {
         Vector2 move = value.Get<Vector2>();
@@ -123,6 +124,8 @@ public class PlayerMovement : MonoBehaviour
         if (_verticalVelocity > _minimumYVelocity)
             _verticalVelocity = _minimumYVelocity;
     }
-
+    
+#endregion
+    
     
 }
