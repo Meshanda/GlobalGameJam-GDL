@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Utility;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -27,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     {
         _grounded = false;
         
-        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, transform.localScale.Abs(), 0);
         foreach (Collider2D hit in hits)
         {
             if (hit == _boxCollider || hit.isTrigger)

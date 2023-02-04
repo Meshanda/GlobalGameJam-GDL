@@ -269,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
     {
         DoJump();
         
-        if (_wallJumpingCounter > 0f && wallJumpUnlocked.value == true)
+        if (_wallJumpingCounter > 0f && wallJumpUnlocked.value == true && controller.IsGrounded == false)
             StartCoroutine(DoWallJump());
     }
 
