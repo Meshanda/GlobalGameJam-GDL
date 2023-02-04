@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368327485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.31, y: 1.1499977, z: -9.869308}
+  m_LocalPosition: {x: 39.8, y: 1.9529977, z: -9.869308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -279,11 +279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1150017645085152530, guid: a8439b924867c5d47951f90f9b430dcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.31
+      value: 39.8
       objectReference: {fileID: 0}
     - target: {fileID: 1150017645085152530, guid: a8439b924867c5d47951f90f9b430dcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: -2.947
       objectReference: {fileID: 0}
     - target: {fileID: 1150017645085152530, guid: a8439b924867c5d47951f90f9b430dcc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -460,7 +460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074268103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.641469, y: 1.1505799, z: -9.869308}
+  m_LocalPosition: {x: 34.73478, y: 1.28301, z: -9.869308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -622,6 +622,7 @@ MonoBehaviour:
   _grappinCam: {fileID: 0}
   _wallJumpCam: {fileID: 0}
   _hacheCam: {fileID: 0}
+  BlendTime: 0.7
 --- !u!1 &1852133923
 GameObject:
   m_ObjectHideFlags: 3
