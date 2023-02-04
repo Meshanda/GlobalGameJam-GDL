@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Music.unity
     guid: d941db8d63381f8488dd1c29c473b2ec
+  - enabled: 1
+    path: Assets/Scenes/Cameras.unity
+    guid: d62a3772882d45b4f9f35dea446c14d0
   - enabled: 1
     path: Assets/Scenes/SceneDash.unity
     guid: 2bb4ce8b31abb9d40875ac0134b3c83a
@@ -35,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI_Menu.unity
     guid: 0494465a8c6f89946b2aa29b8abb5d28
+  - enabled: 1
+    path: Assets/Scenes/UI_EndScreen.unity
+    guid: 7026525d81e77e04cb7585c3399fd19a
   - enabled: 1
     path: Assets/Scenes/UI_Overlay.unity
     guid: cbba4afee0bb65442a1a462dd69e881d

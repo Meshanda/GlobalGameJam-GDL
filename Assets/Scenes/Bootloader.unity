@@ -170,6 +170,7 @@ MonoBehaviour:
   _sceneToLoadOnBoot:
   - {fileID: 11400000, guid: 2df1792bba5c73d438a7b01f842201c3, type: 2}
   - {fileID: 11400000, guid: 3bb769a0c376cc9439147b135cbc3980, type: 2}
+  - {fileID: 11400000, guid: 3620906ccfa01134faf60a4d41037e87, type: 2}
   _gameScenes:
   - {fileID: 11400000, guid: 46061ea5a38270c43b10959c1e8b21e5, type: 2}
   - {fileID: 11400000, guid: dc7a9ffa0b0d9204b91bffce97049f13, type: 2}
@@ -177,3 +178,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69e6f57a89fd34b419455891868a3048, type: 2}
   - {fileID: 11400000, guid: 11a498457c27fb043a08b0c8c83e6f45, type: 2}
   - {fileID: 11400000, guid: c5e8b0988a4d5024593f001946d719e5, type: 2}
+  - {fileID: 11400000, guid: f6dcf5d965911f04ba6e7cce16e9e005, type: 2}
