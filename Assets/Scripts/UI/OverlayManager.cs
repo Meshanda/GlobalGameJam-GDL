@@ -41,15 +41,15 @@ public class OverlayManager : MonoBehaviour
 
     private void OnRefreshOverlay()
     {
-        if (_doubleJumpUnlocked)
+        if (_doubleJumpUnlocked.value)
             _doubleJumpImg.SetActive(true);
-        if (_dashUnlocked)
+        if (_dashUnlocked.value)
             _dashImg.SetActive(true);
-        if (_grappinUnlocked)
+        if (_grappinUnlocked.value)
             _grappinImg.SetActive(true);
-        if (_wallJumpUnlocked)
+        if (_wallJumpUnlocked.value)
             _wallJumpImg.SetActive(true);
-        if (_hacheUnlocked)
+        if (_hacheUnlocked.value)
             _hacheImg.SetActive(true);
     }
 }
