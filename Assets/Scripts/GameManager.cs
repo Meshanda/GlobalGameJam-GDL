@@ -12,6 +12,7 @@ public class GameManager : GenericSingleton<GameManager>
     public void Win()
     {
         PlayerMovement.Instance.Movable = false;
+        AudioManager.Instance.Play("theme2");
         StartCoroutine(WinRoutine());
     }
 
