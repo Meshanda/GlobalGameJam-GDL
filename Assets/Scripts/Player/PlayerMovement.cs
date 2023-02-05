@@ -412,11 +412,27 @@ public bool Movable { get; set; } = true;
     {
         if(axeSpawned && axeUnlocked.value == true)
         {
-            axeSpawned.SetActive(true);
+            _playerAnimator.SetBool("Attack", true);
+            StartCoroutine(StopAttackCoroutine());        
         }
     }
     
 #endregion
-    
+
+    public void StartAttack()
+    {
+        axeSpawned.SetActive(true);
+    }
+
+    public void StopAttack()
+    {
+        axeSpawned.SetActive(false);
+    }
+
+    private IEnumerator StopAttackCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _playerAnimator.SetBool("Attack", false);
+    }
     
 }
