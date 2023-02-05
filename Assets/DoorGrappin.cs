@@ -25,9 +25,14 @@ public class DoorGrappin : MonoBehaviour
         if (PlayerMovement.Instance.gameObject.GetComponent<Interact>().NearDoor && _nearDoor)
         {
             GetComponent<TransitionCamera>()?.Transition();
-            PlayerMovement.Instance.gameObject.transform.position = teleportTo.transform.position;
-            Debug.Log($"{gameObject.name}: {teleportTo.transform.position}");
+            Invoke(nameof(MovePlayer), 0.1f);
         }
+    }
+
+    void MovePlayer()
+    {
+        PlayerMovement.Instance.gameObject.transform.position = teleportTo.transform.position;
+        Debug.Log($"{gameObject.name}: {teleportTo.transform.position}");
     }
     
     private void OnTriggerEnter2D(Collider2D col)
