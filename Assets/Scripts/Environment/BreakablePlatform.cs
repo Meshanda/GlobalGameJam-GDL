@@ -9,8 +9,6 @@ public class BreakablePlatform : MonoBehaviour
     [SerializeField] private float _timeUntilBreak = 2f;
     [SerializeField] private float _moveFactor = 1f;
     [SerializeField] private float _maxHorizontalMovement = 0.1f;
-    
-    [SerializeField] private BoolVariable _dashUnlocked;
 
     private bool _shakePlatform = false;
     private bool _right = true;
@@ -40,11 +38,8 @@ public class BreakablePlatform : MonoBehaviour
 
         yield return new WaitForSeconds(_timeUntilBreak);
         
-        if (!_dashUnlocked || !_dashUnlocked.value)
-        {
-            GetComponent<SpriteRenderer>().enabled = true;
-            GetComponent<BoxCollider2D>().enabled = true;
-        }
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     private void Update()
