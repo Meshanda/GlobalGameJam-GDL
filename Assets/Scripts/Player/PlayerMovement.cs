@@ -147,6 +147,7 @@ public bool Movable { get; set; } = true;
         _lastGrounded = controller.IsGrounded;
         if (_lastGrounded)
         {
+            _isInCoyoteTime = false;
             StopCoroutine(nameof(EndCoyoteCoroutine));
         }
     }
@@ -285,6 +286,7 @@ public bool Movable { get; set; } = true;
                 _secondJumping = false;
                 _gravity = gravityUp;
                 _verticalVelocity = _maximumYVelocity;
+                _isInCoyoteTime = false;
             }
         }
         
@@ -294,6 +296,7 @@ public bool Movable { get; set; } = true;
         
         if (controller.IsGrounded || _isInCoyoteTime)
         {
+            _isInCoyoteTime = false;
             _secondJumping = true;
             _gravity = gravityUp;
             _verticalVelocity = _maximumYVelocity;
