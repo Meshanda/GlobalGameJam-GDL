@@ -112,6 +112,7 @@ public bool Movable { get; set; } = true;
             _grapplingOccurs = value;
             if (_grapplingOccurs)
             {
+                AudioManager.Instance.Play("grappin");
                 _verticalVelocity = 0f;
                 rigidbody2D.gravityScale = 8.0f;
             }
@@ -323,6 +324,7 @@ public bool Movable { get; set; } = true;
                 _gravity = gravityUp;
                 _verticalVelocity = _maximumYVelocity;
                 _isInCoyoteTime = false;
+                AudioManager.Instance.Play("jump");
             }
         }
         
@@ -338,6 +340,7 @@ public bool Movable { get; set; } = true;
             _verticalVelocity = _maximumYVelocity;
 
             _playerAnimator.SetBool("IsJumping", true);
+            AudioManager.Instance.Play("jump");
         }
     }
 
@@ -348,6 +351,9 @@ public bool Movable { get; set; } = true;
         _gravity = gravityUp;
         _verticalVelocity = _maximumYVelocity;
         _wallJumpingVelocity = _wallJumpingDirection * wallJumpingPower;
+        
+        AudioManager.Instance.Play("jump");
+        
         yield return new WaitForSeconds(0.2f);
         _wallJumping = false;
         _wallJumpingVelocity = 0f;
@@ -356,6 +362,7 @@ public bool Movable { get; set; } = true;
     private IEnumerator DoDash()
     {
         _playerAnimator.SetBool("IsDashing", true);
+        AudioManager.Instance.Play("dash");
 
         _canDash = false;
         _dashing = true;
@@ -413,6 +420,7 @@ public bool Movable { get; set; } = true;
         if(axeSpawned && axeUnlocked.value == true)
         {
             _playerAnimator.SetBool("Attack", true);
+            AudioManager.Instance.Play("axe");
             StartCoroutine(StopAttackCoroutine());        
         }
     }

@@ -29,6 +29,7 @@ public class Rune : MonoBehaviour
         foreach (var go in _objectsToEnable.Where(go => go))
             go.SetActive(true);
 
+        AudioManager.Instance.Play("rune");
         OverlayManager.RefreshOverlay();
         PopUp();
     }

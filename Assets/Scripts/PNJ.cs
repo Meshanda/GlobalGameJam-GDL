@@ -32,6 +32,8 @@ public class PNJ : GenericSingleton<PNJ>
         _index = 0;
 
         _idleText.text = _hasHache.value ? "Woaw you found it!!!" : "Hey! Listen!";
+        
+        AudioManager.Instance.Play("pnj");
     }
 
     public void NextDialogue()
@@ -65,5 +67,6 @@ public class PNJ : GenericSingleton<PNJ>
             };
         }
         
+        AudioManager.Instance.Play("pnj");
     }
 }
