@@ -321,6 +321,7 @@ public bool Movable { get; set; } = true;
         _dashing = true;
         _gravity = 0;
         _verticalVelocity = 0;
+        rigidbody2D.velocity = Vector2.zero;
         
         _dashVelocity = transform.localScale.x * dashPower;
         yield return new WaitForSeconds(dashTime);

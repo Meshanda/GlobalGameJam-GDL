@@ -365,7 +365,7 @@ MonoBehaviour:
   maxFallSpeed: -30
   moveSpeed: 7
   dashPower: 4
-  dashTime: 0.1
+  dashTime: 0.2
   wallCheck: {fileID: 58087849362744751}
   wallSlidingSpeed: 2
   wallLayer:
@@ -432,7 +432,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150017645085152533}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -465,7 +465,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -536,12 +536,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d9e409c9ee6ea478fd3caf496f1bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GrappinUnlocked: {fileID: 0}
   lineRenderer: {fileID: 5695046181126096330}
   distanceJoint2D: {fileID: 3537233171548113686}
   grapplingWallMask:
     serializedVersion: 2
     m_Bits: 256
-  grapplingRadius: 4
+  grapplingRadius: 4.5
 --- !u!1 &4643338214026536726
 GameObject:
   m_ObjectHideFlags: 0

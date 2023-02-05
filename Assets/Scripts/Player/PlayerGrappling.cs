@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects.Variables;
 using UnityEngine;
 
 public class PlayerGrappling : MonoBehaviour
 {
+    [SerializeField] private BoolVariable GrappinUnlocked;
+    
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private DistanceJoint2D distanceJoint2D;
     [SerializeField] private LayerMask grapplingWallMask;
@@ -86,18 +89,13 @@ public class PlayerGrappling : MonoBehaviour
 
     private void OnGrappling()
     {
-        if(_canGrap)
+        if(_canGrap && GrappinUnlocked.value == true)
             DoGrappling();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, grapplingRadius);
     }
 
     private void OnGrapplingRelease()
     {
-        DoGrapplingRelease();
+        if(GrappinUnlocked.value == true)
+            DoGrapplingRelease();
     }
 }
