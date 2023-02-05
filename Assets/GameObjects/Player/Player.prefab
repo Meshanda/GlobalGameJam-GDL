@@ -229,6 +229,7 @@ Transform:
   - {fileID: 2552801321372386135}
   - {fileID: 58087849362744751}
   - {fileID: 9161525554139546856}
+  - {fileID: 8914898388403792815}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -358,6 +359,7 @@ MonoBehaviour:
   secondJumpUnlocked: {fileID: 11400000, guid: 3e4061eaf9324a34f885744f42bdf130, type: 2}
   dashUnlocked: {fileID: 11400000, guid: b001284221d538d459dc5844cd3bffc2, type: 2}
   wallJumpUnlocked: {fileID: 11400000, guid: 72e981152ddbc294c9c35f8c33bc855f, type: 2}
+  axeUnlocked: {fileID: 11400000, guid: c23d2ca219ecd0649a5d99fc92d13bbb, type: 2}
   maximumJumpHeight: 2.25
   minimumJumpHeight: 0.25
   coyoteTime: 0.2
@@ -375,6 +377,8 @@ MonoBehaviour:
   wallJumpingTime: 0.15
   wallJumpingPower: 1.5
   headCheck: {fileID: 9161525554139546856}
+  axeToSpawn: {fileID: 6356626252742727875, guid: 921ac43b39a7fca46a2fe81cd622d961, type: 3}
+  axeSocket: {fileID: 8914898388403792815}
   controller: {fileID: 1150017645085152535}
   rigidbody2D: {fileID: 599628396}
 --- !u!114 &1150017645085152531

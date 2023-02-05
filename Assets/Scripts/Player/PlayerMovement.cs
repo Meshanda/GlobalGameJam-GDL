@@ -12,6 +12,7 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
     [SerializeField] private BoolVariable secondJumpUnlocked;
     [SerializeField] private BoolVariable dashUnlocked;
     [SerializeField] private BoolVariable wallJumpUnlocked;
+    [SerializeField] private BoolVariable axeUnlocked;
 #endregion
 
 #region Jump
@@ -86,10 +87,18 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
 
     #endregion
 
+#region Axe
+
+    [SerializeField] private GameObject axeToSpawn;
+    [SerializeField] private Transform axeSocket;
+    
+    private GameObject axeSpawned;
+
+    
+#endregion
+
+public bool Movable { get; set; } = true;
     [SerializeField] private Animator _playerAnimator;
-
-    public bool Movable { get; set; } = true;
-
     private bool _grapplingOccurs;
     
     public bool GrapplingOccurs
@@ -123,6 +132,7 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
     {
         base.Awake();
         _canDash = true;
+        EquipAxe();
     }
 
     // Update is called once per frame
@@ -280,6 +290,18 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
             return;
         }
     }
+    
+
+    private void EquipAxe()
+    {
+        if (axeSpawned)
+            return;
+        
+        axeSpawned = Instantiate(axeToSpawn, axeSocket, false);
+        axeSpawned.SetActive(false);
+    }
+
+
 
     // check if you make the sex with a wall
     private bool IsWalled()
@@ -384,6 +406,14 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
         
         if(_canDash == true && dashUnlocked.value == true)
             StartCoroutine(DoDash());
+    }
+
+    public void OnAxe()
+    {
+        if(axeSpawned && axeUnlocked.value == true)
+        {
+            axeSpawned.SetActive(true);
+        }
     }
     
 #endregion
