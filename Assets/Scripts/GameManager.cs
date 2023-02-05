@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects.Variables;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] private StringVariable _endScreen;
+    [SerializeField] private float _endGameDelay = 0f;
     
-    private void Win()
+    public void Win()
     {
+        PlayerMovement.Instance.Movable = false;
+        StartCoroutine(WinRoutine());
+    }
+
+    private IEnumerator WinRoutine()
+    {
+        yield return new WaitForSeconds(_endGameDelay);
         
+        
+        Time.timeScale = 0;
+        SceneManager.LoadSceneAsync(_endScreen.value, LoadSceneMode.Additive);
     }
 }

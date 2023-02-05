@@ -41,6 +41,13 @@ public class PNJ : GenericSingleton<PNJ>
         if (!_isInteractable) return;
 
         _index++;
+
+        if (_index == 4 && _hasHache.value)
+        {
+            GameManager.Instance.Win();
+            _idleText.gameObject.SetActive(false);
+        }
+            
         if (_index > 3)
             _index = 0;
 
