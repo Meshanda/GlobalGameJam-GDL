@@ -39,15 +39,18 @@ public class Root : MonoBehaviour
             // play death visual
             Checkpoint.ReturnPlayer();
         }
-        
+
         if (col.gameObject.CompareTag("Axe"))
         {
-            SpriteRenderer spriteRenderer = faceSocket.AddComponent<SpriteRenderer>();
+            /* SpriteRenderer spriteRenderer = faceSocket.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = rootFace;
             spriteRenderer.sortingOrder = 20;
             faceSocket.transform.parent = null;
             faceSocket.transform.localScale = new Vector3(0.1f, 0.1f, 0);
             faceSocket.transform.parent = gameObject.transform;
+            */
+
+            Destroy(gameObject);
         }
     }
 }
