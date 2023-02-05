@@ -87,8 +87,32 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
 #endregion
 
 public bool Movable { get; set; } = true;
+    private bool _grapplingOccurs;
+    public bool GrapplingOccurs
+    {
+        get
+        {
+            return _grapplingOccurs;
+        }
+        set
+        {
+            _grapplingOccurs = value;
+            if (_grapplingOccurs)
+            {
+                _verticalVelocity = 0f;
+                rigidbody2D.gravityScale = 8.0f;
+            }
+            else
+            {
+                rigidbody2D.gravityScale = 0f;
+                _verticalVelocity = rigidbody2D.velocity.y * 0.5f;
+                //rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.y, 0);
+            }
+        }
+    }
 
-[SerializeField] private CharacterController2D controller;
+    [SerializeField] private CharacterController2D controller;
+    [SerializeField] private Rigidbody2D rigidbody2D;
 
 
     private void Awake()
@@ -138,18 +162,27 @@ public bool Movable { get; set; } = true;
     {
         Vector2 verticalAxis = new Vector2(0, _verticalVelocity);
         Vector2 horizontalAxis = new Vector2(_horizontalVelocity, 0);
-        
+
         if(_wallJumpingVelocity != 0)
             horizontalAxis.x = _wallJumpingVelocity;
         
         if (_dashVelocity != 0)
             horizontalAxis.x = _dashVelocity;
         
+        if (GrapplingOccurs == true)
+            horizontalAxis = Vector2.zero;
+        
+        if(horizontalAxis != Vector2.zero)
+            rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+        
         controller.Move((horizontalAxis * (moveSpeed * Time.deltaTime)) + (verticalAxis * Time.deltaTime));
     }
 
     private void GravityControl()
     {
+        if (GrapplingOccurs == true)
+            return;
+        
         if (_verticalVelocity <= 0 && _dashing == false)
         {
             _gravity = gravityDown;
@@ -157,6 +190,7 @@ public bool Movable { get; set; } = true;
         
         if (controller.IsGrounded && _verticalVelocity < 0)
         {
+            rigidbody2D.velocity = Vector2.zero;
             _secondJumping = false;
             _canDash = true;
             _verticalVelocity = -0.1f;
@@ -241,15 +275,24 @@ public bool Movable { get; set; } = true;
     
     private void DoJump()
     {
+        
         if(_secondJumping == true)
         {
             if(secondJumpUnlocked.value == true)
             {
+                if(GrapplingOccurs)
+                    GrapplingOccurs = false;
+                
                 _secondJumping = false;
+                _gravity = gravityUp;
                 _verticalVelocity = _maximumYVelocity;
                 _isInCoyoteTime = false;
             }
         }
+        
+        
+        if (GrapplingOccurs == true)
+            return;
         
         if (controller.IsGrounded || _isInCoyoteTime)
         {
@@ -300,6 +343,10 @@ public bool Movable { get; set; } = true;
     {
         DoJump();
         
+        
+        if (GrapplingOccurs == true)
+            return;
+        
         if (_wallJumpingCounter > 0f && wallJumpUnlocked.value == true && controller.IsGrounded == false)
             StartCoroutine(DoWallJump());
     }
@@ -312,6 +359,9 @@ public bool Movable { get; set; } = true;
 
     public void OnDash()
     {
+        if (GrapplingOccurs == true)
+            return;
+        
         if(_canDash == true && dashUnlocked.value == true)
             StartCoroutine(DoDash());
     }
