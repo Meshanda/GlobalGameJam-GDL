@@ -46,10 +46,10 @@ public class PNJ : GenericSingleton<PNJ>
         {
             _idleText.text = _index switch
             {
-                0 => "Hey! Listen!",
-                1 => "Some evil roots spread into our sacred place!",
-                2 => "Can you find the mighty axe to break those roots, please ?",
-                3 => "Pleeeeeeease",
+                0 => "<wave a=0.015 f=0.7>Hey! Listen!</wave>",
+                1 => "Some <shake a=0.0035><color=#9F614A>evil roots</color></shake> spread into our <wave a=0.0045><color=#FFD700>sacred place!</color>",
+                2 => "Can you find the <incr a=.5 f=2><color=red>mighty axe</color></incr> to break those roots, please ?",
+                3 => "<wave a=0.015 f=0.7>Pleeeeeeease</wave>",
                 _ => _idleText.text
             };
         }
@@ -57,10 +57,10 @@ public class PNJ : GenericSingleton<PNJ>
         {
             _idleText.text = _index switch
             {
-                0 => "Woaw you found it!!!",
-                1 => "The power of the mighty axe allows you to destroy those roots.",
+                0 => "<wave a=0.015 f=0.75>Woaw you found it!!!",
+                1 => "The power of the <incr a=.5 f=2><color=red>mighty axe</color></incr> allows you to destroy those <shake a=0.0035><color=#9F614A>evil roots</color></shake>.",
                 2 => "Find them all and make them go away!",
-                3 => "I can't thank you enough for your help!!",
+                3 => "<bounce a=0.015 f=.7>I can't thank you enough for your help!!",
                 _ => _idleText.text
             };
         }
