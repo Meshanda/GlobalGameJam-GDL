@@ -1729,6 +1729,7 @@ MonoBehaviour:
   - {fileID: 1803647207}
   - {fileID: 489961144}
   _newPower: {fileID: 11400000, guid: b001284221d538d459dc5844cd3bffc2, type: 2}
+  _runeType: 1
 --- !u!212 &1132598304
 SpriteRenderer:
   m_ObjectHideFlags: 0

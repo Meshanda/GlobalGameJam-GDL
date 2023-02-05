@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+public enum RoomType
+{
+    DoubleJump,
+    Dash,
+    Grappin,
+    WallJump,
+    Hache
+}
 public class TransitionCamera : MonoBehaviour
 {
-    private enum RoomType
-    {
-        DoubleJump,
-        Dash,
-        Grappin,
-        WallJump,
-        Hache
-    }
-
     [SerializeField] private bool _useCollision = true;
     [SerializeField] private RoomType _roomType;
     private void OnTriggerEnter2D(Collider2D other)

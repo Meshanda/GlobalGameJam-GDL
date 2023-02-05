@@ -430,6 +430,7 @@ MonoBehaviour:
   _objectsToEnable:
   - {fileID: 686517419}
   _newPower: {fileID: 11400000, guid: 3e4061eaf9324a34f885744f42bdf130, type: 2}
+  _runeType: 0
 --- !u!212 &163241670
 SpriteRenderer:
   m_ObjectHideFlags: 0

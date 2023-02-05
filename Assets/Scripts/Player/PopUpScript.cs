@@ -4,24 +4,33 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PopUpScript : MonoBehaviour
+public class PopUpScript : GenericSingleton<PopUpScript>
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private List<GameObject> _texts;
-
+    [SerializeField] private GameObject _text;
+    [SerializeField] private float delay = 1.5f;
     private bool _lookingLeft;
-    private void Update()
+
+    public void OnTogglePopUp(RoomType _roomType)
     {
-        RotatePopUps(_player.transform.localScale.x);
+        var str = _roomType switch
+        {
+            RoomType.DoubleJump => "You can now double jump !",
+            RoomType.Dash => "You can now dash forward!\nPress J",
+            RoomType.Grappin => "You can now use a grappling hook!\n Press K",
+            RoomType.WallJump => "You can now wall jump!",
+            RoomType.Hache => "You can now cut roots!\n Press L",
+            _ => ""
+        };
+        
+        _text.GetComponent<TMP_Text>().text = str;
+        _text.SetActive(true);
+        StartCoroutine(DestroyPopUp());
     }
 
-    private void RotatePopUps(float xScale)
+    private IEnumerator DestroyPopUp()
     {
-        foreach (var text in _texts)
-        {
-            text.transform.localScale = new Vector3(xScale,
-                                                        text.transform.localScale.y,
-                                                        text.transform.localScale.z);
-        }
+        yield return new WaitForSeconds(delay);
+
+        _text.SetActive(false);
     }
 }

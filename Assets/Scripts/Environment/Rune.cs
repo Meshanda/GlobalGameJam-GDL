@@ -11,6 +11,7 @@ public class Rune : MonoBehaviour
     [SerializeField] private List<GameObject> _objectsToDisable;
     [SerializeField] private List<GameObject> _objectsToEnable;
     [SerializeField] private BoolVariable _newPower;
+    [SerializeField] private RoomType _runeType;
 
     private void Awake()
     {
@@ -29,12 +30,20 @@ public class Rune : MonoBehaviour
             go.SetActive(true);
 
         OverlayManager.RefreshOverlay();
+        PopUp();
+    }
+
+    private void PopUp()
+    {
+        
+        
+        PopUpScript.Instance.OnTogglePopUp(_runeType);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
         UnlockPower();
+        Destroy(gameObject);
     }
 }
 
