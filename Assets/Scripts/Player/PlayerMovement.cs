@@ -84,10 +84,14 @@ public class PlayerMovement : GenericSingleton<PlayerMovement>
 
     [SerializeField] private Transform headCheck;
 
-#endregion
+    #endregion
 
-public bool Movable { get; set; } = true;
+    [SerializeField] private Animator _playerAnimator;
+
+    public bool Movable { get; set; } = true;
+
     private bool _grapplingOccurs;
+    
     public bool GrapplingOccurs
     {
         get
@@ -132,6 +136,16 @@ public bool Movable { get; set; } = true;
         WallJumpControl();
         HeadBumpControl();
         CoyoteTime();
+
+        AnimationParameters();
+    }
+
+    private void AnimationParameters()
+    {
+        _playerAnimator.SetFloat("Speed", Mathf.Abs(_horizontalVelocity));
+        _playerAnimator.SetBool("IsJumping", !controller.IsGrounded);
+        _playerAnimator.SetBool("IsGrapling", GrapplingOccurs);
+        _playerAnimator.SetBool("IsWalled", IsWalled());
     }
 
     private bool _lastGrounded = false;
@@ -300,6 +314,8 @@ public bool Movable { get; set; } = true;
             _secondJumping = true;
             _gravity = gravityUp;
             _verticalVelocity = _maximumYVelocity;
+
+            _playerAnimator.SetBool("IsJumping", true);
         }
     }
 
@@ -317,6 +333,8 @@ public bool Movable { get; set; } = true;
 
     private IEnumerator DoDash()
     {
+        _playerAnimator.SetBool("IsDashing", true);
+
         _canDash = false;
         _dashing = true;
         _gravity = 0;
@@ -325,7 +343,8 @@ public bool Movable { get; set; } = true;
         
         _dashVelocity = transform.localScale.x * dashPower;
         yield return new WaitForSeconds(dashTime);
-        
+
+        _playerAnimator.SetBool("IsDashing", false);
         _dashing = false;
         _dashVelocity = 0;
     }
