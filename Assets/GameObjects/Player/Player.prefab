@@ -375,6 +375,7 @@ MonoBehaviour:
   wallJumpingTime: 0.15
   wallJumpingPower: 1.5
   headCheck: {fileID: 9161525554139546856}
+  _playerAnimator: {fileID: 1001195507}
   controller: {fileID: 1150017645085152535}
   rigidbody2D: {fileID: 599628396}
 --- !u!114 &1150017645085152531
@@ -554,7 +555,7 @@ Animator:
   m_GameObject: {fileID: 1150017645085152533}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5107c8b270e27b842a0aaef9aa1d7d6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
