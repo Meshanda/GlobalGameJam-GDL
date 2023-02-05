@@ -10,7 +10,8 @@ public class PlayerGrappling : MonoBehaviour
     [SerializeField] private LayerMask grapplingWallMask;
     [SerializeField] private float grapplingRadius;
 
-    private bool canGrap;
+    private bool _canGrap;
+    private bool _groping;
 
     private GameObject _wallToGrab;
 
@@ -19,13 +20,14 @@ public class PlayerGrappling : MonoBehaviour
     {
         distanceJoint2D.enabled = false;
         lineRenderer.enabled = false;
-        canGrap = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         _wallToGrab = null;
+        
+        _canGrap = false;
         
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, grapplingRadius, grapplingWallMask);
         foreach (Collider2D hit in hits)
@@ -43,20 +45,27 @@ public class PlayerGrappling : MonoBehaviour
             {
                 _wallToGrab = hit.gameObject;
             }
+            
+            _canGrap = true;
         }
 
         if (distanceJoint2D.enabled)
         {
             lineRenderer.SetPosition(1, transform.position);
         }
+
+        if (PlayerMovement.Instance.GrapplingOccurs == false && _groping == true)
+            DoGrapplingRelease();
+
     }
 
     private void DoGrappling()
     {
         if (_wallToGrab == null)
             return;
-        
-        canGrap = false;
+
+        PlayerMovement.Instance.GrapplingOccurs = true;
+        _groping = true;
         lineRenderer.SetPosition(0, _wallToGrab.transform.position);
         lineRenderer.SetPosition(1, transform.position);
         
@@ -67,14 +76,17 @@ public class PlayerGrappling : MonoBehaviour
     
     private void DoGrapplingRelease()
     {
-        canGrap = true;
+        if(PlayerMovement.Instance.GrapplingOccurs == true)
+            PlayerMovement.Instance.GrapplingOccurs = false;
+        
+        _groping = false;
         distanceJoint2D.enabled = false;
         lineRenderer.enabled = false;
     }
 
     private void OnGrappling()
     {
-        if(canGrap)
+        if(_canGrap)
             DoGrappling();
     }
 
