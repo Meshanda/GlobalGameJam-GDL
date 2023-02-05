@@ -170,7 +170,7 @@
                 {
                     "name": "",
                     "id": "a72dd1b8-03fd-4577-95b8-c828c25a8475",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -236,7 +236,7 @@
                 {
                     "name": "",
                     "id": "2866107b-ef3a-4d91-94a4-500d7ec077ad",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -247,7 +247,29 @@
                 {
                     "name": "",
                     "id": "e41c021a-0841-4cd1-a810-5047fb626512",
-                    "path": "",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Axe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4244485a-5e37-4e6f-8867-09ab80cb4909",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Axe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36851016-59d7-4661-a8a1-dfd1144d5413",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -346,7 +368,7 @@
                 {
                     "name": "",
                     "id": "466796c3-9b78-4e21-be3b-774a7f98e7bd",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
