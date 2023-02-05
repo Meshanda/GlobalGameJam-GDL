@@ -5,19 +5,28 @@ using UnityEngine;
 
 public class DoorGrappin : MonoBehaviour
 {
+    public static Action ClickDoor;
+    
     public GameObject teleportTo;
-    private GameObject _player;
+    public bool _nearDoor;
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.A) && _player)
+        ClickDoor += OnClickDoor;
+    }
+    
+    private void OnDisable()
+    {
+        ClickDoor -= OnClickDoor;
+    }
+
+    private void OnClickDoor()
+    {
+        if (PlayerMovement.Instance.gameObject.GetComponent<Interact>().NearDoor && _nearDoor)
         {
-            if (teleportTo)
-            {
-                GetComponent<TransitionCamera>()?.Transition();
-                _player.transform.position = teleportTo.transform.position;
-            }
+            GetComponent<TransitionCamera>()?.Transition();
+            PlayerMovement.Instance.gameObject.transform.position = teleportTo.transform.position;
+            Debug.Log($"{gameObject.name}: {teleportTo.transform.position}");
         }
     }
     
@@ -25,7 +34,8 @@ public class DoorGrappin : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            _player = col.gameObject;
+            PlayerMovement.Instance.gameObject.GetComponent<Interact>().NearDoor = true;
+            _nearDoor = true;
         }
     }
 
@@ -33,7 +43,8 @@ public class DoorGrappin : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            _player = null;
-        }
+            PlayerMovement.Instance.gameObject.GetComponent<Interact>().NearDoor = false;
+            _nearDoor = false;
+        }    
     }
 }

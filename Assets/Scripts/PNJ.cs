@@ -14,6 +14,7 @@ public class PNJ : GenericSingleton<PNJ>
     private int _index;
     private void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerMovement.Instance.GetComponent<Interact>().NearPNJ = true;
         ResetDialogue();
         _idleText.gameObject.SetActive(true);
         _isInteractable = true;
@@ -21,6 +22,7 @@ public class PNJ : GenericSingleton<PNJ>
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        PlayerMovement.Instance.GetComponent<Interact>().NearPNJ = true;
         _idleText.gameObject.SetActive(false);
         _isInteractable = false;
     }
