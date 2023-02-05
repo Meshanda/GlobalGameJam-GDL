@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 3537233171548113686}
   - component: {fileID: 5695046181126096330}
   - component: {fileID: 7833924335769188270}
+  - component: {fileID: 1001195507}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -328,7 +329,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1150017645085152535
 MonoBehaviour:
@@ -536,13 +537,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d9e409c9ee6ea478fd3caf496f1bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrappinUnlocked: {fileID: 0}
+  GrappinUnlocked: {fileID: 11400000, guid: 70a5141dd0b84eb41943c4ff53b4bfea, type: 2}
   lineRenderer: {fileID: 5695046181126096330}
   distanceJoint2D: {fileID: 3537233171548113686}
   grapplingWallMask:
     serializedVersion: 2
     m_Bits: 256
   grapplingRadius: 4.5
+--- !u!95 &1001195507
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150017645085152533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4643338214026536726
 GameObject:
   m_ObjectHideFlags: 0
