@@ -23,6 +23,16 @@ public class Root : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        OnTriggerExecute(col);
+    }
+
+    public void OnTriggerChild(Collider2D col)
+    {
+        OnTriggerExecute(col);
+    }
+
+    private void OnTriggerExecute(Collider2D col)
+    {
         if (col.gameObject.CompareTag("Player"))
         {
             // play death sound
