@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5781875500771729077}
+  - component: {fileID: 1656004285}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -31,3 +32,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656004285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328373719359340491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb61adcae3751194bba0866898484dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMusicActive: 1
+  IsSFXActive: 1
+  FadeTime: 1
+  Sounds:
+  - Name: theme
+    Type: 0
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 460a7e6f2b306d142867058ef6e9c316, type: 3}
+    Loop: 1
+    Volume: 0.14
+    Source: {fileID: 0}
+  - Name: theme2
+    Type: 0
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 80c95a89e2f7aa742974123e88086895, type: 3}
+    Loop: 1
+    Volume: 0.14
+    Source: {fileID: 0}
+  - Name: axe
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 59d50d84b534d9341854b94d17648b4f, type: 3}
+    Loop: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - Name: pnj
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 265a639c834af1042a9cc60e7019a03f, type: 3}
+    Loop: 0
+    Volume: 0.15
+    Source: {fileID: 0}
+  - Name: dash
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: c49137d39af1a944fab3a8b42eeb5ded, type: 3}
+    Loop: 0
+    Volume: 0.1
+    Source: {fileID: 0}
+  - Name: jump
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 1949d97c11a98d64fba5c6c746053765, type: 3}
+    Loop: 0
+    Volume: 0.08
+    Source: {fileID: 0}
+  - Name: rune
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 43e4a114ea7f77e4da2d79e1a3c140ca, type: 3}
+    Loop: 0
+    Volume: 0.1
+    Source: {fileID: 0}
+  - Name: grappin
+    Type: 1
+    Blend: 0
+    Clip: {fileID: 8300000, guid: 999180d9091d1754083bc3233348e5c9, type: 3}
+    Loop: 0
+    Volume: 0.08
+    Source: {fileID: 0}
