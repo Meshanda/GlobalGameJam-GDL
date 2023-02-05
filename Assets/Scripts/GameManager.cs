@@ -7,11 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] private StringVariable _endScreen;
+    [SerializeField] private float _endGameDelay = 0f;
     
     public void Win()
     {
-        Time.timeScale = 0;
+        PlayerMovement.Instance.Movable = false;
+        StartCoroutine(WinRoutine());
+    }
 
+    private IEnumerator WinRoutine()
+    {
+        yield return new WaitForSeconds(_endGameDelay);
+        
+        
+        Time.timeScale = 0;
         SceneManager.LoadSceneAsync(_endScreen.value, LoadSceneMode.Additive);
     }
 }

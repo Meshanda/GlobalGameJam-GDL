@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5a19d0057025c43b4da21bfd455dd7, type: 3}
   m_Name: Hache
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
