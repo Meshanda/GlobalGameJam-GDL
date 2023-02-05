@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &117058153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -323,6 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &123466361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -554,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210658163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.81, y: -3.38, z: 0}
+  m_LocalPosition: {x: -28.248, y: -3.274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -673,6 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &318014316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -799,6 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &412743988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -896,6 +904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!61 &559399609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -996,6 +1006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &601826702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1160,6 +1172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &807600334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1352,6 +1366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &1280642191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1766,6 +1782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &1557376073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1892,6 +1910,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &1748209639
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2063,6 +2083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &1843943967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2187,6 +2209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22349bd6a1d1403f9ddcfc1872588fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootFace: {fileID: 0}
+  faceSocket: {fileID: 0}
 --- !u!212 &2103600371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2277,7 +2301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2858699240846900975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.98, y: -3.46, z: 0}
+  m_LocalPosition: {x: -10.847, y: -3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
