@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayerToRightPlaceWallJump : MonoBehaviour
+public class EnterWallJumpRoom : MonoBehaviour
 {
-
     private bool _isEntering = true;
 
     private void OnTriggerEnter2D(Collider2D other)
