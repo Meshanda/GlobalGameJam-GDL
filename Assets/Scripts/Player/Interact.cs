@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    public bool NearPNJ;
+    public bool NearDoor;
     public void OnInteract()
     {
-        PNJ.Instance.NextDialogue();
+        if (NearPNJ)
+        {
+            PNJ.Instance.NextDialogue();
+        }
+
+        if (NearDoor)
+        {
+            DoorGrappin.ClickDoor();
+        }
     }
 }

@@ -24,10 +24,6 @@ public class OverlayManager : MonoBehaviour
     // Wall Jump
     [SerializeField] private GameObject _wallJumpImg;
     [SerializeField] private BoolVariable _wallJumpUnlocked;
-   
-    // Hache
-    [SerializeField] private GameObject _hacheImg;
-    [SerializeField] private BoolVariable _hacheUnlocked;
 
     private void OnEnable()
     {
@@ -54,7 +50,5 @@ public class OverlayManager : MonoBehaviour
             _grappinImg.SetActive(true);
         if (_wallJumpUnlocked.value)
             _wallJumpImg.SetActive(true);
-        if (_hacheUnlocked.value)
-            _hacheImg.SetActive(true);
     }
 }

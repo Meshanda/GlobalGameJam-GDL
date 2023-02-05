@@ -15,8 +15,15 @@ public class TransitionCamera : MonoBehaviour
         Hache
     }
 
+    [SerializeField] private bool _useCollision = true;
     [SerializeField] private RoomType _roomType;
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_useCollision)
+            Transition();
+    }
+
+    public void Transition()
     {
         PlayerMovement.Instance.Movable = false;
 
